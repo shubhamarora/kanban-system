@@ -1,0 +1,38 @@
+.form-group {
+  margin: 20px 0;
+  &__label {
+    display: block;
+    font-size: 0.8em;
+    margin-bottom: 5px;
+  }
+  &__input,
+  &__textarea,
+  &__select{
+    box-sizing: border-box;
+    height: 35px;
+    font-size: 12px;
+    padding: 5px 10px;
+    width: 100%;
+    border: 2px solid $primary-border-color;
+    border-radius: 2px;
+  }
+  &__textarea {
+    min-height: 60px;
+  }
+  &__select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: white;
+    cursor: pointer;
+  }
+}
+.Searchable-select__label,
+.Searchable-select__input {
+  box-sizing: border-box;
+  height: 35px;
+  font-size: 12px;
+}
+.Searchable-select__menu {
+  box-sizing: border-box;
+}

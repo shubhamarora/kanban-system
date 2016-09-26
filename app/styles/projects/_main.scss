@@ -1,0 +1,90 @@
+.container {
+  font-family: 'Lato', sans-serif;
+  width: 80%;
+  padding: 5% 10%;
+}
+.project-canvas {
+  overflow: hidden;
+  &:after {
+    content: ' ';
+    clear: both;
+  }
+}
+.project-card {
+  box-sizing: border-box;
+  float: left;
+  width: 28%;
+  padding: 25px;
+  margin: 2%;
+  border: 3px solid $primary-border-color;
+  border-radius: 3px;
+  cursor: pointer;
+
+  &:hover {
+    border-color: $primary-color;
+  }
+  &__title {
+    margin: 0;
+    font-weight: 400;
+  }
+
+  &__description {
+    font-weight: 300;
+    margin: 0.7em 0;
+    font-size: 0.9em;
+    color: $text-dim-color;
+  }
+
+  &__members {
+    margin: 0.7em 0;
+    font-weight: 400;
+    font-size: 0.9em;
+  }
+}
+.create-project-card {
+  position: relative;
+  min-height: 165px;
+  text-align: center;
+  padding-top: 45px;
+  &__title {
+    color: rgb(158, 154, 165);
+    font-weight: 300;
+    font-size: 0.9em;
+    margin-top: 0.5em;
+  }
+  &:hover {
+    border-color: $primary-color;
+    .create-project-card__title {
+      color: $primary-color;
+    }
+    .plus-icon {
+      border-color: inherit;
+    }
+  }
+}
+.plus-icon {
+  width: 26px;
+  height: 26px;
+  border: 2px solid $primary-border-color;
+  border-radius: 50%;
+  position: relative;
+  display: inline-block;
+  &:before {
+    content: ' ';
+    position: absolute;
+    left: 5px;
+    top: 12px;
+    width: 16px;
+    border-bottom: 2px solid;
+    border-color: inherit;
+  }
+  &:after {
+    content: ' ';
+    position: absolute;
+    left: 12px;
+    top: 5px;
+    border-left: 2px solid;
+    border-color: inherit;
+    height: 16px;
+  }
+}

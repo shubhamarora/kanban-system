@@ -1,0 +1,19 @@
+.primary-button {
+  font-family: 'Lato', sans-serif;
+  border-radius: 15px;
+  padding: 8px 30px;
+  border: 1px solid $text-dim-color;
+  color: $text-dim-color;
+  background-color: white;
+  font-size: 14px;
+  cursor: pointer;
+  margin: 0px 5px;
+  &:focus {
+    outline: 0;
+  }
+}
+.create-button  {
+  color: white;
+  background: $primary-color;
+  border-color: $primary-color;
+}

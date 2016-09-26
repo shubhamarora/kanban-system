@@ -1,0 +1,21 @@
+<div class="project">
+    <div class="project__container">
+        {{#each data as |data|}}
+            <div class="task-list">
+                <div class="task-list__member shadow--2dp">
+                    {{data.name}}
+                </div>
+                <div class="task-list__items">
+                    {{#each data.tasks as |task|}}
+                        <div class="task-card task-card--status-{{task.status}}">
+                            <p class="task-card__title">{{task.title}}</p>
+                            <a class="task-card__status task-card__status--{{task.status}}">Done</a>
+                            <p class="task-card__description">{{task.description}}</p>
+                        </div>
+                    {{/each}}
+                </div>
+                {{create-task}}
+            </div>
+        {{/each}}
+    </div>
+</div>

@@ -1,0 +1,17 @@
+<section class="container">
+    <div class="project-canvas">
+        {{#each model as |project|}}
+            <div class="project-card">
+                <h2 class="project-card__title">{{project.title}}</h2>
+                <p class="project-card__description">{{project.description}}</p>
+                <p class="project-card__members">Total Members:<strong>{{project.total_members}}</strong></p>
+            </div>
+        {{/each}}
+
+        <div class="project-card create-project-card" {{action "toggleCreateProjectDialog"}}>
+            <span class="plus-icon"></span>
+            <p class="create-project-card__title">Create New Project</p>
+            {{create-project isDisplay=showCreateProjectDialog projectList=model containerClass="create-project-card"}}
+        </div>
+    </div>
+</section>

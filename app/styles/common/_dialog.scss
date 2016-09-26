@@ -1,0 +1,36 @@
+.create-dialog {
+    font-family: 'Lato', sans-serif;
+    position: absolute;
+    text-align: left;
+    width: 400px;
+    left: 80%;
+    bottom: 70%;
+    background-color: white;
+    z-index: 2;
+    &__header {
+        position: relative;
+        padding: 15px 20px;
+        border-bottom: 1px solid $primary-border-color;
+        .close-icon {
+            position: absolute;
+            right: 15px;
+            top: 15px;
+            cursor: pointer;
+        }
+    }
+    &__title {
+      margin: 0;
+      font-weight: 400;
+    }
+    &__footer {
+      border-top: 1px solid $primary-border-color;
+      text-align: right;
+      padding: 10px;
+    }
+    &__content {
+      padding: 0 20px;
+    }
+}
+.Searchable-select__options-list {
+  max-height: 105px;
+}
