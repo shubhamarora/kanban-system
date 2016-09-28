@@ -5,6 +5,7 @@
 }
 .project-canvas {
   overflow: hidden;
+  padding-bottom: 600px;
   &:after {
     content: ' ';
     clear: both;

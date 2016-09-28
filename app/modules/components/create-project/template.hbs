@@ -1,32 +1,36 @@
-{{#if isDisplay}}
-    <div class="create-dialog shadow--2dp">
-        <header class="create-dialog__header">
-            <h4 class="create-dialog__title">Create Project</h4>
-            <span class="close-icon" {{action "closeDialog" bubbles=false}}>&#10005;</span>
-        </header>
-        <div class="create-dialog__content">
-            <div class="form-group">
-                <label class="form-group__label">Title</label>
-                {{input class="form-group__input" type="text" placeholder="Task Title..." }}
+<div class="project-card create-project-card" {{action "showDialog"}}>
+    <span class="plus-icon"></span>
+    <p class="create-project-card__title">Create New Project</p>
+    {{#if isDisplay}}
+        <div class="create-dialog shadow--2dp {{dialogPosition}}">
+            <header class="create-dialog__header">
+                <h4 class="create-dialog__title">Create Project</h4>
+                <span class="close-icon" {{action "closeDialog" bubbles=false}}>&#10005;</span>
+            </header>
+            <div class="create-dialog__content">
+                <div class="form-group">
+                    <label class="form-group__label">Title</label>
+                    {{input class="form-group__input" type="text" value=title placeholder="Task Title..." }}
+                </div>
+                <div class="form-group">
+                    <label class="form-group__label">Description</label>
+                    {{textarea class="form-group__textarea" type="text" value=description placeholder="Start Typing..." }}
+                </div>
+                <div class="form-group">
+                    <label class="form-group__label">Members</label>
+                    {{searchable-select
+                    content=membersList
+                    sortBy="title"
+                    multiple=true
+                    prompt="Select"
+                    className="Some-class"
+                    on-change=(action "updateMemberList")}}
+                </div>
             </div>
-            <div class="form-group">
-                <label class="form-group__label">Description</label>
-                {{textarea class="form-group__textarea" type="text" placeholder="Start Typing..." }}
-            </div>
-            <div class="form-group">
-                <label class="form-group__label">Members</label>
-                {{searchable-select
-                content=membersList
-                sortBy="title"
-                multiple=true
-                prompt="Select"
-                className="Some-class"
-                on-change=(action "updateMemberList")}}
-            </div>
+            <footer class="create-dialog__footer">
+                <button class="primary-button" {{action "closeDialog" bubbles=false}}>Cancel</button>
+                <button class="primary-button create-button" {{action 'createProject' bubbles=false}}>Create</button>
+            </footer>
         </div>
-        <footer class="create-dialog__footer">
-            <button class="primary-button" {{action "closeDialog" bubbles=false}}>Cancel</button>
-            <button class="primary-button create-button">Create</button>
-        </footer>
-    </div>
-{{/if}}
+    {{/if}}
+</div>

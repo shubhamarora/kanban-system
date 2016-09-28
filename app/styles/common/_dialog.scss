@@ -3,10 +3,8 @@
     position: absolute;
     text-align: left;
     width: 400px;
-    left: 80%;
-    bottom: 70%;
     background-color: white;
-    z-index: 2;
+    z-index: 3;
     &__header {
         position: relative;
         padding: 15px 20px;
@@ -19,16 +17,28 @@
         }
     }
     &__title {
-      margin: 0;
-      font-weight: 400;
+        margin: 0;
+        font-weight: 400;
     }
     &__footer {
-      border-top: 1px solid $primary-border-color;
-      text-align: right;
-      padding: 10px;
+        border-top: 1px solid $primary-border-color;
+        text-align: right;
+        padding: 10px;
     }
     &__content {
-      padding: 0 20px;
+        padding: 0 20px;
+    }
+    &--top {
+        bottom: 70%;
+    }
+    &--bottom {
+        top: 50%;
+    }
+    &--left {
+        right: 70%;
+    }
+    &--right {
+        left: 70%;
     }
 }
 .Searchable-select__options-list {

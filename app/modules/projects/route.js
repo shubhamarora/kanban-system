@@ -3,27 +3,47 @@ import Ember from 'ember';
 export default Ember.Route.extend({
   model(params) {
     return [
-      {title: "Publishing",
-      description: "It is a module which helps use to post in multiple channel at once.",
-      total_members: 12},
-      {title: "Paid",
+      {
+        id:1,
+        title: "Publishing",
+        description: "It is a module which helps use to post in multiple channel at once.",
+        total_members: 12
+      },
+      {
+        id:2,
+        title: "Paid",
         description: "It is a module which helps use to post in multiple channel at once.",
         total_members: 12},
-      {title: "Core",
+      {
+        id:3,
+        title: "Core",
         description: "It is a module which helps use to post in multiple channel at once.",
         total_members: 12},
-      {title: "Engagement",
+      {
+        id:4,
+        title: "Engagement",
         description: "It is a module which helps use to post in multiple channel at once.",
         total_members: 12},
-      {title: "Distributed",
+      {
+        id:5,
+        title: "Distributed",
         description: "It is a module which helps use to post in multiple channel at once.",
         total_members: 12},
-      {title: "Social Selling",
+      {
+        id:6,
+        title: "Social Selling",
         description: "It is a module which helps use to post in multiple channel at once.",
         total_members: 12},
-      {title: "RTM",
+      {
+        id:7,
+        title: "RTM",
         description: "It is a module which helps use to post in multiple channel at once.",
         total_members: 12}
     ]
+  },
+  actions: {
+    transitionToProject(param) {
+      this.transitionTo('project', {id: param});
+    }
   }
 });

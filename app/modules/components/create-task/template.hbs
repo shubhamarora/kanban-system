@@ -2,7 +2,7 @@
     <span class="plus-icon"></span>
     <p>Create Task</p>
     {{#if isDisplay}}
-        <div class="create-dialog shadow--2dp">
+        <div class="create-dialog {{dialogPosition}} shadow--2dp">
             <header class="create-dialog__header">
                 <h4 class="create-dialog__title">Create Task</h4>
                 <span class="close-icon" {{action "closeDialog" bubbles=false}}>&#10005;</span>
@@ -10,28 +10,29 @@
             <div class="create-dialog__content">
                 <div class="form-group">
                     <label class="form-group__label">Title</label>
-                  {{input class="form-group__input" type="text" placeholder="Task Title..." }}
+                  {{input class="form-group__input" value=title type="text" placeholder="Task Title..." }}
                 </div>
                 <div class="form-group">
                     <label class="form-group__label">Description</label>
-                    {{textarea class="form-group__textarea" type="text" placeholder="Start Typing..." }}
+                    {{textarea class="form-group__textarea" value=description type="text" placeholder="Start Typing..." }}
                 </div>
                 <div class="form-group">
                     <label class="form-group__label">Status</label>
-                    <select class="form-group__select">
-                        <option>- Select -</option>
-                        <option>Done</option>
-                        <option>On Hold</option>
-                        <option>In Process</option>
-                        <option>Send</option>
-                        <option>Schedule</option>
+                    <select class="form-group__select" onchange={{action (mut status) value="target.value"}}>
+                        <option value="">- Select -</option>
+                        <option value="0">Done</option>
+                        <option value="1">On Hold</option>
+                        <option value="2">In Process</option>
+                        <option value="3">Send</option>
+                        <option value="4">Schedule</option>
                     </select>
                 </div>
             </div>
             <footer class="create-dialog__footer">
                 <button class="primary-button" {{action "closeDialog" bubbles=false}}>Cancel</button>
-                <button class="primary-button create-button">Create</button>
+                <button class="primary-button create-button" {{action "createTask" bubbles=false}}>Create</button>
             </footer>
         </div>
     {{/if}}
+    <div class="task-list__scrollDown"></div>
 </div>

@@ -1,1 +1,9 @@
-{{yield}}
+<a class="task-card__status task-status task-card__status--{{status}}" {{action 'toggleStatusList'}}>{{currentStatusValue}} <span class="task-status__expandicon"></span>
+  {{#if showStatusList}}
+      <ul class="task-status__list shadow--2dp">
+        {{#each-in statusMapping as |key value|}}
+            <li class="task-status__item" {{action 'setStatus' key bubbles=false}}>{{value}}</li>
+        {{/each-in}}
+      </ul>
+  {{/if}}
+</a>

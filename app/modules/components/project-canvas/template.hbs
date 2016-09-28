@@ -4,17 +4,18 @@
             <div class="task-list">
                 <div class="task-list__member shadow--2dp">
                     {{data.name}}
+                    <div class="task-list__scrollUp"></div>
                 </div>
                 <div class="task-list__items">
                     {{#each data.tasks as |task|}}
-                        <div class="task-card task-card--status-{{task.status}}">
+                        <div class="task-card task-card--status-{{task.status}}" data-member-id={{data.id}} data-task-id={{task.id}}>
                             <p class="task-card__title">{{task.title}}</p>
-                            <a class="task-card__status task-card__status--{{task.status}}">Done</a>
+                            {{task-status status=task.status}}
                             <p class="task-card__description">{{task.description}}</p>
                         </div>
                     {{/each}}
                 </div>
-                {{create-task}}
+                {{create-task data=data}}
             </div>
         {{/each}}
     </div>
